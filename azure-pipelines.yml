@@ -13,7 +13,7 @@ variables:
   
 steps:
 - task: UseDotNet@2
-  displayName: 'Use .NET SDK $(dotnetSdkVersion)'
+  displayName: 'Use .NET SDK 5.x'
   inputs:
     packageType: sdk
     version: '$(dotnetSdkVersion)'
@@ -23,7 +23,7 @@ steps:
   inputs:
     verbose: false
   
-- script: './node_modules/.bin/node-sass $(wwwrootDir) --output $(wwwrootDir)'
+- script: './node_modules/.bin/node-sass Tailspin.SpaceGame.Web/wwwroot --output Tailspin.SpaceGame.Web/wwwroot'
   displayName: 'Compile Sass assets'
   
 - task: gulp@1
